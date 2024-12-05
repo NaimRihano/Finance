@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Credit Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Credit Card Application Prediction</h1>
+        <form id="predictionForm">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select><br><br>
+
+            <label for="own_car">Own Car:</label>
+            <select id="own_car" name="own_car" required>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+            </select><br><br>
+
+            <label for="own_realty">Own Realty:</label>
+            <select id="own_realty" name="own_realty" required>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+            </select><br><br>
+
+            <label for="cnt_children">Number of Children:</label>
+            <input type="number" id="cnt_children" name="cnt_children" required><br><br>
+
+            <label for="amt_income_total">Total Income:</label>
+            <input type="number" id="amt_income_total" name="amt_income_total" step="0.01" required><br><br>
+
+            <label for="income_type">Income Type:</label>
+            <select id="income_type" name="income_type" required>
+                <option value="Working">Working</option>
+                <option value="Commercial associate">Commercial Associate</option>
+                <option value="Pensioner">Pensioner</option>
+                <option value="State servant">State Servant</option>
+                <option value="Student">Student</option>
+            </select><br><br>
+
+            <label for="education_type">Education Type:</label>
+            <select id="education_type" name="education_type" required>
+                <option value="Higher education">Higher Education</option>
+                <option value="Secondary / secondary special">Secondary Education</option>
+                <option value="Incomplete higher">Incomplete Higher</option>
+                <option value="Lower secondary">Lower Secondary</option>
+                <option value="Academic degree">Academic Degree</option>
+            </select><br><br>
+
+            <label for="family_status">Family Status:</label>
+            <select id="family_status" name="family_status" required>
+                <option value="Civil marriage">Civil Marriage</option>
+                <option value="Married">Married</option>
+                <option value="Single / not married">Single / Not Married</option>
+                <option value="Separated">Separated</option>
+                <option value="Widow">Widow</option>
+            </select><br><br>
+
+            <label for="housing_type">Housing Type:</label>
+            <select id="housing_type" name="housing_type" required>
+                <option value="Rented apartment">Rented Apartment</option>
+                <option value="House / apartment">House / Apartment</option>
+                <option value="Municipal apartment">Municipal Apartment</option>
+                <option value="With parents">With Parents</option>
+                <option value="Co-op apartment">Co-op Apartment</option>
+                <option value="Office apartment">Office Apartment</option>
+            </select><br><br>
+
+            <label for="days_employed">Days Employed:</label>
+            <input type="number" id="days_employed" name="days_employed" required><br><br>
+
+            <label for="work_phone">Work Phone (Yes=1, No=0):</label>
+            <input type="number" id="work_phone" name="work_phone" min="0" max="1" required><br><br>
+
+            <label for="phone">Phone (Yes=1, No=0):</label>
+            <input type="number" id="phone" name="phone" min="0" max="1" required><br><br>
+
+            <label for="email">Email (Yes=1, No=0):</label>
+            <input type="number" id="email" name="email" min="0" max="1" required><br><br>
+
+            <label for="occupation_type">Occupation Type:</label>
+            <select id="occupation_type" name="occupation_type" required>
+                <option value="Security staff">Security Staff</option>
+                <option value="Sales staff">Sales Staff</option>
+                <option value="Accountants">Accountants</option>
+                <option value="Laborers">Laborers</option>
+                <option value="Managers">Managers</option>
+                <option value="Drivers">Drivers</option>
+                <option value="Core staff">Core Staff</option>
+                <option value="High skill tech staff">High Skill Tech Staff</option>
+                <option value="Cleaning staff">Cleaning Staff</option>
+                <option value="Private service staff">Private Service Staff</option>
+                <option value="Cooking staff">Cooking Staff</option>
+                <option value="Low-skill Laborers">Low-skill Laborers</option>
+                <option value="Medicine staff">Medicine Staff</option>
+                <option value="Secretaries">Secretaries</option>
+                <option value="Waiters/barmen staff">Waiters/Barmen Staff</option>
+                <option value="HR staff">HR Staff</option>
+                <option value="Realty agents">Realty Agents</option>
+                <option value="IT staff">IT Staff</option>
+            </select><br><br>
+
+            <label for="cnt_fam_members">Number of Family Members:</label>
+            <input type="number" id="cnt_fam_members" name="cnt_fam_members" step="0.01" required><br><br>
+
+            <label for="age_years">Age (in years):</label>
+            <input type="number" id="age_years" name="age_years" required><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result">
+            <h3>Prediction Result:</h3>
+            <p id="predictionText"></p>
+            <p id="confidenceScore"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
